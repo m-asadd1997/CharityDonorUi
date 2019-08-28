@@ -1,0 +1,283 @@
+<div class="ui-g ">
+  <!-- Submit button -->
+    <div class="ui-md-1 ui-lg-1"></div>
+    <div class="ui-md-3 ui-lg-3 ui-sm-12">
+      <button
+        pButton
+        style="width: 100%"
+        type="button"
+        (click)="routeToViewCharity()"
+        label="View All"
+        class="ui-button-raised  ui-button-danger"
+      ></button>
+  </div>
+  </div>
+
+<div class="ui-g-12">
+
+<p-card header="" [style]="{ width: '100%' }">
+  <p-toast></p-toast>
+
+  <!-- <div class="ui-g-12"></div> -->
+
+  <div class="ui-g ui-fluid">
+    <div class="ui-md-5 ui-lg-5"></div>
+    <h2>DONOR FORM</h2>
+    <hr style="height:2px;width:100%;background-color:#4178d1;" />
+    <div class="ui-lg-7 ui-md-7 ui-sm-12">
+      <form style="width:100%;" #myForm="ngForm">
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >dropdown<i style="color: red; height: 20px !important;">*</i></span
+              >
+            
+              <ngx-select-dropdown  required [ngStyle]="{width: '100%'}" name="charityDropdown" [(ngModel)]="charityObj" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >Full Name<i style="color: red">*</i></span
+              >
+              <input
+                placeholder="Donor's Full Name"
+                type="text"
+                name="fullname"
+                pInputText
+                required
+                style="text-align: center;width:100%"
+                [(ngModel)]="fullname"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >Address<i style="color: red">*</i></span
+              >
+              <input
+                placeholder="Enter first line of address"
+                type="text"
+                name="address"
+                pInputText
+                ngModel
+                required
+                style="text-align: center;width:100%"
+                [(ngModel)]="formObj.donorAddress"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >City<i style="color: red">*</i></span
+              >
+              <input
+                placeholder="Enter your City"
+                type="Enter City"
+                name="city"
+                pInputText
+                ngModel
+                required
+                style="text-align: center;width:100%"
+                [(ngModel)]="formObj.donorCity"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >Postcode<i style="color: red">*</i></span
+              >
+              <input
+                placeholder="Enter Postcode "
+                type="Enter Postcode"
+                name="postalcode"
+                pInputText
+                ngModel
+                required
+                style="text-align: center;width:100%"
+                [(ngModel)]="formObj.donorPostalCode"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >Country<i style="color: red">*</i></span
+              >
+              <input
+                placeholder="Enter your age"
+                type="Enter Country"
+                name="country"
+                pInputText
+                ngModel
+                required
+                style="text-align: center;width:100%"
+                [(ngModel)]="formObj.donorCountry"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-md-1 ui-lg-1"></div>
+          <div class="ui-md-8 ui-lg-8 ui-sm-12">
+            <div class="ui-inputgroup">
+              <span
+                class="ui-inputgroup-addon"
+                style="width:20%;font-size:15px;font-weight: bold;"
+                >Amount<i style="color: red">*</i></span
+              >
+              <input
+                placeholder="&#163;(in UKP)"
+                type="text"
+                name="amount"
+                pInputText
+                ngModel
+                required
+                style="text-align: center;width:100%"
+                [(ngModel)]="formObj.amount"
+              />
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="ui-g-12 ">
+          <div class="ui-g ui-fluid">
+            <!-- Submit button -->
+            <div class="ui-md-6 ui-lg-6"></div>
+            <div class="ui-md-6 ui-lg-6 ui-sm-12">
+              <button
+                pButton
+                type="button"
+                style="width: 100%"
+                (click)="showData()"
+                [disabled]="myForm.invalid "
+                label="Submit"
+                class="ui-button-raised"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="ui-md-4 ui-lg-4 ui-sm-12">
+      <p-card header="GiftAid Questions : " [style]="{ padding: '10px' }">
+
+        <hr style="height:2px;width:100%;background-color:#4178d1;" />
+        <form #Qform = "ngForm">
+        <p style="font-weight: bold">
+          Q.1) Are they donating their own money?
+        </p>
+        <br />
+        <div class="ui-g">
+          <div>
+            <p-radioButton
+              name="q1"
+              [value]="true"
+              label="Yes"
+              required
+              [(ngModel)]="formObj.isOwnMoney"
+            ></p-radioButton>
+          </div>
+          <div style="margin-left: 10%">
+            <p-radioButton
+              name="q1"
+              [value]="false"
+              label="No"
+              required
+              [(ngModel)]="formObj.isOwnMoney"
+            ></p-radioButton>
+          </div>
+        </div>
+        <br />
+        <p style="font-weight: bold">
+          Q.2) Whether the funds are proceeds of a sale or provision of a
+          service
+        </p>
+        <br />
+        <div class="ui-g">
+          <div>
+            <p-radioButton
+              name="q2"
+              [value]="true"
+              label="Yes"
+              required
+              [(ngModel)]="formObj.hasNoBenefitToDonor"
+            ></p-radioButton>
+          </div>
+          <div style="margin-left: 10%">
+            <p-radioButton
+              name="q2"
+              [value]="false"
+              label="No"
+              required
+              [(ngModel)]="formObj.hasNoBenefitToDonor"
+            ></p-radioButton>
+          </div>
+        </div>
+        <br />
+        <p style="font-weight: bold">
+          Q.3) Whether they received any benefit from the donation (e.g. entry
+          to an event) and that they wish to GiftAid the donation
+        </p>
+        <br />
+        <div class="ui-g">
+          <div>
+            <p-radioButton
+              name="q3"
+              [value]="true"
+              label="Yes"
+              required
+              [(ngModel)]="formObj.wishesToGiftAid"
+            ></p-radioButton>
+          </div>
+          <div style="margin-left: 10%">
+            <p-radioButton
+              name="q3"
+              [value]="false"
+              label="No"
+              required
+              [(ngModel)]="formObj.wishesToGiftAid"
+            ></p-radioButton>
+          </div>
+        </div>
+      </form>
+      </p-card>
+    </div>
+  </div>
+</p-card>
+</div>
