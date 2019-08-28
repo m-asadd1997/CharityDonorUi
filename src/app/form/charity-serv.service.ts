@@ -14,4 +14,18 @@ export class DonorFormService {
   public saveDonorForm(donorForm: any): Observable<Object> { // postMethod
     return this.http.post(environment.baseUrl + 'api/donation', donorForm);
   }
+  // public saveDonorForm(donorForm: any): Observable<Object> { // postMethod
+  //   return this.http.post(environment.baseUrl + 'api/donation', donorForm);
+  // }
+
+  public getAllDonations():Observable<any>{
+    return this.http.get(environment.baseUrl+"api/donation/getall");
+  }
+  public getDonationById(id):Observable<any>{
+    return this.http.get(environment.baseUrl+"api/donation/id/"+id);
+  }
+
+  public getDonationByName(name:any):Observable<any>{
+    return this.http.get(environment.baseUrl+"api/donation/name/"+name)
+  }
 }

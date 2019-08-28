@@ -17,6 +17,8 @@ import {MessageService} from 'primeng/api';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import {CalendarModule} from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewCharityComponent } from './view-charity/view-charity.component';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -26,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     FormComponent,
     MyName1Component,
-    MyName2Component
+    MyName2Component,
+    ViewCharityComponent
   ],
   imports: [
     AccordionModule,
@@ -41,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RadioButtonModule,
     ToastModule,
     SelectDropDownModule,
-    CalendarModule
+    CalendarModule,
+    InputTextModule
 
   ],
   providers: [MessageService],

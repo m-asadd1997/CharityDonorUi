@@ -1,0 +1,87 @@
+<h3 style="text-align: center">View All Donations</h3>
+<div class="ui-g">
+  <div class="ui-md-1 ui-lg-1"></div>
+  <div class="ui-md-5 ui-lg-5 ui-sm-12">
+    <div class="ui-inputgroup">
+      <span
+        class="ui-inputgroup-addon"
+        style="width:25%;font-size:13px;font-weight: bold;"
+        >Charity Id</span
+      >
+      <input
+        placeholder="Search By Charity Id"
+        type="text"
+        name="charityId"
+        pInputText  
+        ngModel
+        required
+        style="text-align: center;width:100%"
+        [(ngModel)]="charityObj.id"
+      
+        (input)="doDisable($event)"
+      />
+    </div>
+  </div>
+  <div class="ui-md-5 ui-lg-5 ui-sm-12">
+    <div class="ui-inputgroup">
+      <span
+        class="ui-inputgroup-addon"
+        style="width:25%;font-size:14px;font-weight: bold;"
+        >Name</span
+      >
+      <input
+        placeholder="Search By Name"
+        type="text"
+        name="name"
+        pInputText  
+        ngModel
+        required
+        style="text-align: center;width:100%"
+        [(ngModel)]="charityObj.name"
+        (input)="doDisable($event)"
+
+      />
+    </div>
+  </div>
+</div>
+
+
+<div class="ui-g">
+  <div class="ui-md-3 ui-lg-3 ui-sm-0"></div>
+  <div class="ui-lg-6 ui-md-6 ui-sm-12">
+    <button
+      pButton
+      type="button"  
+      style="width:45%;margin-left:30% "
+      label="Filter"
+      (click)="checkServiceToCall()"
+      [disabled]="charityObj.name.length && charityObj.id"
+    ></button>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <th *ngFor="let col of cols">
+          {{ col.header }}
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hos of donations" style="overflow: auto;">
+          <td>{{ hos.id }}</td>
+          <td>{{ hos.lastUpdatedDate }}</td>
+          <td>{{ hos.totalAfterGifAid | number }}</td>
+          <td>{{ hos.totalBeforeGiftAid | number }}</td>
+          <td>{{ hos.totalGiftAid | number }}</td>
+          <td>{{ hos.charityId}}</td>
+          
+      </tr>
+      <tr *ngIf="noValues">
+        <p>No donations Available</p>
+      </tr>
+      </tbody>
+    </table>
+  </div>

@@ -131,22 +131,6 @@ export class FormComponent implements OnInit {
   }
 
   showData() {
-    //   var postcode = require('postcode-validator');
-    //  // returns true
-    //   if(!(postcode.validate(this.formObj.donorPostalCode, 'UK')))
-    //   {
-    //     error => {
-    //       this.mesgService.add({
-    //         key: 'u',
-    //         severity: 'error',
-    //         summary: 'Failed',
-    //         detail: 'postal code is not in correct format'
-    //       });
-    //       console.log(error);
-    //     }
-    //   }
-    //   else
-    //   {
 if(this.formObj.amount< 1){
  
     this.mesgService.add({
@@ -171,7 +155,7 @@ else{
     this.formObj.purpose = this.charityObj["purpose"];
     this.formObj.logoFileName = this.charityObj["logoFileName"];
     this.formObj.registrationId = this.charityObj["registrationId"];
-    console.log(this.formObj, this.fullname);
+    
     this.charityService.saveDonorForm(this.formObj).subscribe(
       data => {
         this.mesgService.add({
@@ -180,7 +164,7 @@ else{
           detail: "Added"
         });
 
-        console.log(data);
+        
       },
       error => {
         this.mesgService.add({
@@ -188,16 +172,12 @@ else{
           summary: "Failed",
           detail: "Something went wrong check your internet connection "
         });
-        console.log(error);
+        
       }
     );
   }
 }
-  // }
-
-  // console.log("i am finally on console",this.name)
-  // console.log(this.email,this.age)
-
+  
   routeToViewCharity() {
     this.router.navigate(["routeToViewCharity"]);
   }
@@ -210,11 +190,5 @@ else{
     return true;
   }
   
-  // postalCodeChecker = function(postcode) {
-  //   postcode = postcode.replace(/\s/g, "");
-  //   var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
-  //   return regex.test(postcode);
-  // };
-
-  //   console.log(valid_postcode("jhsfb"))
+  
 }
