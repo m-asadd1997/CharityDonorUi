@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
     "ngx-select-dropdown": "^1.0.1",
+    "postcode-validator": "^2.0.0",
     "primeicons": "^2.0.0",
     "primeng": "^8.0.2",
     "rxjs": "~6.3.3",

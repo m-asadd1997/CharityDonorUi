@@ -14,7 +14,9 @@ import {CardModule} from 'primeng/card';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
-import { SelectDropDownModule } from 'ngx-select-dropdown'
+import { SelectDropDownModule } from 'ngx-select-dropdown';
+import {CalendarModule} from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -28,6 +30,7 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
   ],
   imports: [
     AccordionModule,
+    BrowserAnimationsModule,
     // MenuItem,
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +40,8 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
     CardModule,
     RadioButtonModule,
     ToastModule,
-    SelectDropDownModule
+    SelectDropDownModule,
+    CalendarModule
 
   ],
   providers: [MessageService],

@@ -32,8 +32,8 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
-                >dropdown<i style="color: red; height: 20px !important;">*</i></span
+                style="width:25%;font-size:13px;font-weight: bold;"
+                >Charity Name<i style="color: red; height: 20px !important;">*</i></span
               >
             
               <ngx-select-dropdown  required [ngStyle]="{width: '100%'}" name="charityDropdown" [(ngModel)]="charityObj" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
@@ -47,7 +47,7 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
+                style="width:25%;font-size:13px;font-weight: bold;"
                 >Full Name<i style="color: red">*</i></span
               >
               <input
@@ -68,7 +68,7 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
+                style="width:25%;font-size:13px;font-weight: bold;"
                 >Address<i style="color: red">*</i></span
               >
               <input
@@ -90,7 +90,7 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
+                style="width:25%;font-size:13px;font-weight: bold;"
                 >City<i style="color: red">*</i></span
               >
               <input
@@ -112,7 +112,7 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
+                style="width:25%;font-size:13px;font-weight: bold;"
                 >Postcode<i style="color: red">*</i></span
               >
               <input
@@ -121,6 +121,7 @@
                 name="postalcode"
                 pInputText
                 ngModel
+                (change)="formObj.donorPostalCode"
                 required
                 style="text-align: center;width:100%"
                 [(ngModel)]="formObj.donorPostalCode"
@@ -134,11 +135,11 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
+                style="width:25%;font-size:13px;font-weight: bold;"
                 >Country<i style="color: red">*</i></span
               >
               <input
-                placeholder="Enter your age"
+                placeholder="Enter your Country"
                 type="Enter Country"
                 name="country"
                 pInputText
@@ -156,24 +157,30 @@
             <div class="ui-inputgroup">
               <span
                 class="ui-inputgroup-addon"
-                style="width:20%;font-size:15px;font-weight: bold;"
+                style="width:25%;font-size:13px;font-weight: bold;"
                 >Amount<i style="color: red">*</i></span
               >
               <input
-                placeholder="&#163;(in UKP)"
-                type="text"
+                placeholder="&#163;(in UKP) >= 1"
+                type="number"
                 name="amount"
                 pInputText
+                (keypress)="numberOnly($event)"
                 ngModel
                 required
+              min=1
                 style="text-align: center;width:100%"
                 [(ngModel)]="formObj.amount"
               />
             </div>
           </div>
         </div>
-
+       
+        
         <br>
+        <br>
+        <br>
+
         <br>
         <div class="ui-g-12 ">
           <div class="ui-g ui-fluid">
@@ -210,7 +217,7 @@
               [value]="true"
               label="Yes"
               required
-              [(ngModel)]="formObj.isOwnMoney"
+              [(ngModel)]="formObj.ownMoney"
             ></p-radioButton>
           </div>
           <div style="margin-left: 10%">
@@ -219,7 +226,7 @@
               [value]="false"
               label="No"
               required
-              [(ngModel)]="formObj.isOwnMoney"
+              [(ngModel)]="formObj.ownMoney"
             ></p-radioButton>
           </div>
         </div>

@@ -4,7 +4,7 @@ export class FormClass {
   donorCity: String;
   donorPostalCode: String;
   hasNoBenefitToDonor: Boolean;
-  isOwnMoney: Boolean;
+  ownMoney: Boolean;
   wishesToGiftAid :Boolean;
   amount: number;
   charityName: String;
@@ -12,6 +12,7 @@ export class FormClass {
   purpose: String;
   registrationId: number;
   charityId: number; 
-
+  donorFirstName: String;
+  donorLastName: String;
 
 }
