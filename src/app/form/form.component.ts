@@ -45,7 +45,7 @@ export class FormComponent implements OnInit {
                             {charityId: 6, description:'British Heart Foundation', logoFileName: 'bhf', charityName:'British Heart Foundation',purpose:'Heart Disease Research and prevention',registrationId:'12179453'},
                             {charityId: 7, description:'Kidney Research UK', logoFileName: 'kruf', charityName:'Kidney Research UK',purpose:'Kidney Disease Research and prevention',registrationId:'12146208'},
                             {charityId: 8, description:'Oxfam', logoFileName: 'oxfam', charityName:'Oxfam',purpose:'Worldwide aid',registrationId:'12112963'},
-                            {charityId: 9, description:'Green peace', logoFileName: 'greenpeace', charityName:'Greenpeace',purpose:'Environmental protection and upkeep',registrationId:'12079718'} 
+                            {charityId: 9, description:'Green peace', logoFileName: 'greenpeace', charityName:'Greenpeace',purpose:'Environmental protection and upkeep',registrationId:'12079718'}
   ];
 this.formObj.isOwnMoney = false;
 this.formObj.wishesToGiftAid = false;
@@ -58,7 +58,7 @@ this.cols = [
   { field: 'color', header: 'Color' }
 ];
   }
- 
+
 
 
   showData(){
@@ -69,7 +69,7 @@ this.cols = [
     this.formObj.registrationId = this.charityObj['registrationId']
     console.log(this.formObj)
     this.formService.saveUser(this.formObj).subscribe(
-      
+
 
       data =>{
          this.mesgService.add({
@@ -96,10 +96,10 @@ this.cols = [
 
     // console.log("i am finally on console",this.name)
     // console.log(this.email,this.age)
-  
+
 
     routeToViewCharity(){
-      this.router.navigate(['routeToViewCharity']);
+      this.router.navigate(['viewall']);
   }
 
 }

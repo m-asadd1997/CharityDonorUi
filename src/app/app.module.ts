@@ -14,8 +14,10 @@ import {CardModule} from 'primeng/card';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
-import { SelectDropDownModule } from 'ngx-select-dropdown'
-
+import { SelectDropDownModule } from 'ngx-select-dropdown';
+import { ShowComponent } from './show/show.component';
+import {DonorFormService} from './form/charity-serv.service';
+import {TableModule} from 'primeng/table';
 
 
 
@@ -24,10 +26,12 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
     AppComponent,
     FormComponent,
     MyName1Component,
-    MyName2Component
+    MyName2Component,
+    ShowComponent
   ],
   imports: [
     AccordionModule,
+    TableModule,
     // MenuItem,
     BrowserModule,
     AppRoutingModule,
@@ -40,7 +44,7 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
     SelectDropDownModule
 
   ],
-  providers: [MessageService],
+  providers: [MessageService,DonorFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
